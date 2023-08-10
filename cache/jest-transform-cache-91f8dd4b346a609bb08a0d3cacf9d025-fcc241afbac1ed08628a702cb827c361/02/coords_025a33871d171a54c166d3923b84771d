@@ -1,0 +1,67 @@
+8df1074320b49f6bc1429750286841cb
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.add = add;
+exports.getDifferenceFromInitialOffset = getDifferenceFromInitialOffset;
+exports.getSourceClientOffset = getSourceClientOffset;
+exports.subtract = subtract;
+/**
+ * Coordinate addition
+ * @param a The first coordinate
+ * @param b The second coordinate
+ */
+function add(a, b) {
+  return {
+    x: a.x + b.x,
+    y: a.y + b.y
+  };
+}
+/**
+ * Coordinate subtraction
+ * @param a The first coordinate
+ * @param b The second coordinate
+ */
+function subtract(a, b) {
+  return {
+    x: a.x - b.x,
+    y: a.y - b.y
+  };
+}
+/**
+ * Returns the cartesian distance of the drag source component's position, based on its position
+ * at the time when the current drag operation has started, and the movement difference.
+ *
+ * Returns null if no item is being dragged.
+ *
+ * @param state The offset state to compute from
+ */
+function getSourceClientOffset(state) {
+  const {
+    clientOffset,
+    initialClientOffset,
+    initialSourceClientOffset
+  } = state;
+  if (!clientOffset || !initialClientOffset || !initialSourceClientOffset) {
+    return null;
+  }
+  return subtract(add(clientOffset, initialSourceClientOffset), initialClientOffset);
+}
+/**
+ * Determines the x,y offset between the client offset and the initial client offset
+ *
+ * @param state The offset state to compute from
+ */
+function getDifferenceFromInitialOffset(state) {
+  const {
+    clientOffset,
+    initialClientOffset
+  } = state;
+  if (!clientOffset || !initialClientOffset) {
+    return null;
+  }
+  return subtract(clientOffset, initialClientOffset);
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJhZGQiLCJhIiwiYiIsIngiLCJ5Iiwic3VidHJhY3QiLCJnZXRTb3VyY2VDbGllbnRPZmZzZXQiLCJzdGF0ZSIsImNsaWVudE9mZnNldCIsImluaXRpYWxDbGllbnRPZmZzZXQiLCJpbml0aWFsU291cmNlQ2xpZW50T2Zmc2V0IiwiZ2V0RGlmZmVyZW5jZUZyb21Jbml0aWFsT2Zmc2V0Il0sInNvdXJjZXMiOlsiLi4vLi4vc3JjL3V0aWxzL2Nvb3Jkcy50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgdHlwZSB7IFhZQ29vcmQgfSBmcm9tICcuLi9pbnRlcmZhY2VzLmpzJ1xuaW1wb3J0IHR5cGUgeyBTdGF0ZSB9IGZyb20gJy4uL3JlZHVjZXJzL2RyYWdPZmZzZXQuanMnXG5cbi8qKlxuICogQ29vcmRpbmF0ZSBhZGRpdGlvblxuICogQHBhcmFtIGEgVGhlIGZpcnN0IGNvb3JkaW5hdGVcbiAqIEBwYXJhbSBiIFRoZSBzZWNvbmQgY29vcmRpbmF0ZVxuICovXG5leHBvcnQgZnVuY3Rpb24gYWRkKGE6IFhZQ29vcmQsIGI6IFhZQ29vcmQpOiBYWUNvb3JkIHtcblx0cmV0dXJuIHtcblx0XHR4OiBhLnggKyBiLngsXG5cdFx0eTogYS55ICsgYi55LFxuXHR9XG59XG5cbi8qKlxuICogQ29vcmRpbmF0ZSBzdWJ0cmFjdGlvblxuICogQHBhcmFtIGEgVGhlIGZpcnN0IGNvb3JkaW5hdGVcbiAqIEBwYXJhbSBiIFRoZSBzZWNvbmQgY29vcmRpbmF0ZVxuICovXG5leHBvcnQgZnVuY3Rpb24gc3VidHJhY3QoYTogWFlDb29yZCwgYjogWFlDb29yZCk6IFhZQ29vcmQge1xuXHRyZXR1cm4ge1xuXHRcdHg6IGEueCAtIGIueCxcblx0XHR5OiBhLnkgLSBiLnksXG5cdH1cbn1cblxuLyoqXG4gKiBSZXR1cm5zIHRoZSBjYXJ0ZXNpYW4gZGlzdGFuY2Ugb2YgdGhlIGRyYWcgc291cmNlIGNvbXBvbmVudCdzIHBvc2l0aW9uLCBiYXNlZCBvbiBpdHMgcG9zaXRpb25cbiAqIGF0IHRoZSB0aW1lIHdoZW4gdGhlIGN1cnJlbnQgZHJhZyBvcGVyYXRpb24gaGFzIHN0YXJ0ZWQsIGFuZCB0aGUgbW92ZW1lbnQgZGlmZmVyZW5jZS5cbiAqXG4gKiBSZXR1cm5zIG51bGwgaWYgbm8gaXRlbSBpcyBiZWluZyBkcmFnZ2VkLlxuICpcbiAqIEBwYXJhbSBzdGF0ZSBUaGUgb2Zmc2V0IHN0YXRlIHRvIGNvbXB1dGUgZnJvbVxuICovXG5leHBvcnQgZnVuY3Rpb24gZ2V0U291cmNlQ2xpZW50T2Zmc2V0KHN0YXRlOiBTdGF0ZSk6IFhZQ29vcmQgfCBudWxsIHtcblx0Y29uc3QgeyBjbGllbnRPZmZzZXQsIGluaXRpYWxDbGllbnRPZmZzZXQsIGluaXRpYWxTb3VyY2VDbGllbnRPZmZzZXQgfSA9IHN0YXRlXG5cdGlmICghY2xpZW50T2Zmc2V0IHx8ICFpbml0aWFsQ2xpZW50T2Zmc2V0IHx8ICFpbml0aWFsU291cmNlQ2xpZW50T2Zmc2V0KSB7XG5cdFx0cmV0dXJuIG51bGxcblx0fVxuXHRyZXR1cm4gc3VidHJhY3QoXG5cdFx0YWRkKGNsaWVudE9mZnNldCwgaW5pdGlhbFNvdXJjZUNsaWVudE9mZnNldCksXG5cdFx0aW5pdGlhbENsaWVudE9mZnNldCxcblx0KVxufVxuXG4vKipcbiAqIERldGVybWluZXMgdGhlIHgseSBvZmZzZXQgYmV0d2VlbiB0aGUgY2xpZW50IG9mZnNldCBhbmQgdGhlIGluaXRpYWwgY2xpZW50IG9mZnNldFxuICpcbiAqIEBwYXJhbSBzdGF0ZSBUaGUgb2Zmc2V0IHN0YXRlIHRvIGNvbXB1dGUgZnJvbVxuICovXG5leHBvcnQgZnVuY3Rpb24gZ2V0RGlmZmVyZW5jZUZyb21Jbml0aWFsT2Zmc2V0KHN0YXRlOiBTdGF0ZSk6IFhZQ29vcmQgfCBudWxsIHtcblx0Y29uc3QgeyBjbGllbnRPZmZzZXQsIGluaXRpYWxDbGllbnRPZmZzZXQgfSA9IHN0YXRlXG5cdGlmICghY2xpZW50T2Zmc2V0IHx8ICFpbml0aWFsQ2xpZW50T2Zmc2V0KSB7XG5cdFx0cmV0dXJuIG51bGxcblx0fVxuXHRyZXR1cm4gc3VidHJhY3QoY2xpZW50T2Zmc2V0LCBpbml0aWFsQ2xpZW50T2Zmc2V0KVxufVxuIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7QUFHQTs7Ozs7QUFLTyxTQUFTQSxHQUFHQSxDQUFDQyxDQUFVLEVBQUVDLENBQVUsRUFBVztFQUNwRCxPQUFPO0lBQ05DLENBQUMsRUFBRUYsQ0FBQyxDQUFDRSxDQUFDLEdBQUdELENBQUMsQ0FBQ0MsQ0FBQztJQUNaQyxDQUFDLEVBQUVILENBQUMsQ0FBQ0csQ0FBQyxHQUFHRixDQUFDLENBQUNFO0dBQ1g7O0FBR0Y7Ozs7O0FBS08sU0FBU0MsUUFBUUEsQ0FBQ0osQ0FBVSxFQUFFQyxDQUFVLEVBQVc7RUFDekQsT0FBTztJQUNOQyxDQUFDLEVBQUVGLENBQUMsQ0FBQ0UsQ0FBQyxHQUFHRCxDQUFDLENBQUNDLENBQUM7SUFDWkMsQ0FBQyxFQUFFSCxDQUFDLENBQUNHLENBQUMsR0FBR0YsQ0FBQyxDQUFDRTtHQUNYOztBQUdGOzs7Ozs7OztBQVFPLFNBQVNFLHFCQUFxQkEsQ0FBQ0MsS0FBWSxFQUFrQjtFQUNuRSxNQUFNO0lBQUVDLFlBQVk7SUFBRUMsbUJBQW1CO0lBQUVDO0VBQXlCLENBQUUsR0FBR0gsS0FBSztFQUM5RSxJQUFJLENBQUNDLFlBQVksSUFBSSxDQUFDQyxtQkFBbUIsSUFBSSxDQUFDQyx5QkFBeUIsRUFBRTtJQUN4RSxPQUFPLElBQUk7O0VBRVosT0FBT0wsUUFBUSxDQUNkTCxHQUFHLENBQUNRLFlBQVksRUFBRUUseUJBQXlCLENBQUMsRUFDNUNELG1CQUFtQixDQUNuQjs7QUFHRjs7Ozs7QUFLTyxTQUFTRSw4QkFBOEJBLENBQUNKLEtBQVksRUFBa0I7RUFDNUUsTUFBTTtJQUFFQyxZQUFZO0lBQUVDO0VBQW1CLENBQUUsR0FBR0YsS0FBSztFQUNuRCxJQUFJLENBQUNDLFlBQVksSUFBSSxDQUFDQyxtQkFBbUIsRUFBRTtJQUMxQyxPQUFPLElBQUk7O0VBRVosT0FBT0osUUFBUSxDQUFDRyxZQUFZLEVBQUVDLG1CQUFtQixDQUFDIn0=

@@ -1,0 +1,6 @@
+9e1a54a9cafc2c01c2eba3bc5c98bf39
+'use strict';
+
+// https://ecma-international.org/ecma-262/6.0/#sec-isarray
+module.exports = require('../helpers/IsArray');
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJtb2R1bGUiLCJleHBvcnRzIiwicmVxdWlyZSJdLCJzb3VyY2VzIjpbIklzQXJyYXkuanMiXSwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xuXG4vLyBodHRwczovL2VjbWEtaW50ZXJuYXRpb25hbC5vcmcvZWNtYS0yNjIvNi4wLyNzZWMtaXNhcnJheVxubW9kdWxlLmV4cG9ydHMgPSByZXF1aXJlKCcuLi9oZWxwZXJzL0lzQXJyYXknKTtcbiJdLCJtYXBwaW5ncyI6IkFBQUEsWUFBWTs7QUFFWjtBQUNBQSxNQUFNLENBQUNDLE9BQU8sR0FBR0MsT0FBTyxDQUFDLG9CQUFvQixDQUFDIn0=

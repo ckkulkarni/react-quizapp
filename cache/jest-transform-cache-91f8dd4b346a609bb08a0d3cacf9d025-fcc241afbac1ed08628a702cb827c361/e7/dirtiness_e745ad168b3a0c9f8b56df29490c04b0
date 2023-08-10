@@ -1,0 +1,32 @@
+297a1d92751e46850bfc5c05bdcfcfef
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.NONE = exports.ALL = void 0;
+exports.areDirty = areDirty;
+var _js_utils = require("./js_utils.js");
+const NONE = [];
+exports.NONE = NONE;
+const ALL = [];
+exports.ALL = ALL;
+NONE.__IS_NONE__ = true;
+ALL.__IS_ALL__ = true;
+/**
+ * Determines if the given handler IDs are dirty or not.
+ *
+ * @param dirtyIds The set of dirty handler ids
+ * @param handlerIds The set of handler ids to check
+ */
+function areDirty(dirtyIds, handlerIds) {
+  if (dirtyIds === NONE) {
+    return false;
+  }
+  if (dirtyIds === ALL || typeof handlerIds === 'undefined') {
+    return true;
+  }
+  const commonIds = (0, _js_utils.intersection)(handlerIds, dirtyIds);
+  return commonIds.length > 0;
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJfanNfdXRpbHMiLCJyZXF1aXJlIiwiTk9ORSIsImV4cG9ydHMiLCJBTEwiLCJfX0lTX05PTkVfXyIsIl9fSVNfQUxMX18iLCJhcmVEaXJ0eSIsImRpcnR5SWRzIiwiaGFuZGxlcklkcyIsImNvbW1vbklkcyIsImludGVyc2VjdGlvbiIsImxlbmd0aCJdLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy91dGlscy9kaXJ0aW5lc3MudHMiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgaW50ZXJzZWN0aW9uIH0gZnJvbSAnLi9qc191dGlscy5qcydcblxuZXhwb3J0IGNvbnN0IE5PTkU6IHN0cmluZ1tdID0gW11cbmV4cG9ydCBjb25zdCBBTEw6IHN0cmluZ1tdID0gW11cbi8vIEFkZCB0aGVzZSBmbGFncyBmb3IgZGVidWdcbjsoTk9ORSBhcyBhbnkpLl9fSVNfTk9ORV9fID0gdHJ1ZVxuOyhBTEwgYXMgYW55KS5fX0lTX0FMTF9fID0gdHJ1ZVxuXG4vKipcbiAqIERldGVybWluZXMgaWYgdGhlIGdpdmVuIGhhbmRsZXIgSURzIGFyZSBkaXJ0eSBvciBub3QuXG4gKlxuICogQHBhcmFtIGRpcnR5SWRzIFRoZSBzZXQgb2YgZGlydHkgaGFuZGxlciBpZHNcbiAqIEBwYXJhbSBoYW5kbGVySWRzIFRoZSBzZXQgb2YgaGFuZGxlciBpZHMgdG8gY2hlY2tcbiAqL1xuZXhwb3J0IGZ1bmN0aW9uIGFyZURpcnR5KFxuXHRkaXJ0eUlkczogc3RyaW5nW10sXG5cdGhhbmRsZXJJZHM6IHN0cmluZ1tdIHwgdW5kZWZpbmVkLFxuKTogYm9vbGVhbiB7XG5cdGlmIChkaXJ0eUlkcyA9PT0gTk9ORSkge1xuXHRcdHJldHVybiBmYWxzZVxuXHR9XG5cblx0aWYgKGRpcnR5SWRzID09PSBBTEwgfHwgdHlwZW9mIGhhbmRsZXJJZHMgPT09ICd1bmRlZmluZWQnKSB7XG5cdFx0cmV0dXJuIHRydWVcblx0fVxuXG5cdGNvbnN0IGNvbW1vbklkcyA9IGludGVyc2VjdGlvbihoYW5kbGVySWRzLCBkaXJ0eUlkcylcblx0cmV0dXJuIGNvbW1vbklkcy5sZW5ndGggPiAwXG59XG4iXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFBQSxJQUFBQSxTQUFBLEdBQUFDLE9BQUE7QUFFTyxNQUFNQyxJQUFJLEdBQWEsRUFBRTtBQUFBQyxPQUFBLENBQUFELElBQUEsR0FBQUEsSUFBQTtBQUN6QixNQUFNRSxHQUFHLEdBQWEsRUFBRTtBQUU5QkQsT0FBQSxDQUFBQyxHQUFBLEdBQUFBLEdBQUE7QUFBQUYsSUFBSyxDQUFTRyxXQUFXLEdBQUcsSUFBSTtBQUNoQ0QsR0FBSSxDQUFTRSxVQUFVLEdBQUcsSUFBSTtBQUUvQjs7Ozs7O0FBTU8sU0FBU0MsUUFBUUEsQ0FDdkJDLFFBQWtCLEVBQ2xCQyxVQUFnQyxFQUN0QjtFQUNWLElBQUlELFFBQVEsS0FBS04sSUFBSSxFQUFFO0lBQ3RCLE9BQU8sS0FBSzs7RUFHYixJQUFJTSxRQUFRLEtBQUtKLEdBQUcsSUFBSSxPQUFPSyxVQUFVLEtBQUssV0FBVyxFQUFFO0lBQzFELE9BQU8sSUFBSTs7RUFHWixNQUFNQyxTQUFTLEdBQUcsSUFBQUMsc0JBQVksRUFBQ0YsVUFBVSxFQUFFRCxRQUFRLENBQUM7RUFDcEQsT0FBT0UsU0FBUyxDQUFDRSxNQUFNLEdBQUcsQ0FBQyJ9

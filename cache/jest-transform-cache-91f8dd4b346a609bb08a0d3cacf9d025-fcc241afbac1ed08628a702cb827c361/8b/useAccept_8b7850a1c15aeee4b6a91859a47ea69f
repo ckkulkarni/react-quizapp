@@ -1,0 +1,24 @@
+53f3b74f1767217d4ed7ec9b0b15a306
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.useAccept = useAccept;
+var _invariant = require("@react-dnd/invariant");
+var _react = require("react");
+/**
+ * Internal utility hook to get an array-version of spec.accept.
+ * The main utility here is that we aren't creating a new array on every render if a non-array spec.accept is passed in.
+ * @param spec
+ */
+function useAccept(spec) {
+  const {
+    accept
+  } = spec;
+  return (0, _react.useMemo)(() => {
+    (0, _invariant.invariant)(spec.accept != null, 'accept must be defined');
+    return Array.isArray(accept) ? accept : [accept];
+  }, [accept]);
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJfaW52YXJpYW50IiwicmVxdWlyZSIsIl9yZWFjdCIsInVzZUFjY2VwdCIsInNwZWMiLCJhY2NlcHQiLCJ1c2VNZW1vIiwiaW52YXJpYW50IiwiQXJyYXkiLCJpc0FycmF5Il0sInNvdXJjZXMiOlsiLi4vLi4vLi4vc3JjL2hvb2tzL3VzZURyb3AvdXNlQWNjZXB0LnRzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IGludmFyaWFudCB9IGZyb20gJ0ByZWFjdC1kbmQvaW52YXJpYW50J1xuaW1wb3J0IHR5cGUgeyBJZGVudGlmaWVyIH0gZnJvbSAnZG5kLWNvcmUnXG5pbXBvcnQgeyB1c2VNZW1vIH0gZnJvbSAncmVhY3QnXG5cbmltcG9ydCB0eXBlIHsgRHJvcFRhcmdldEhvb2tTcGVjIH0gZnJvbSAnLi4vdHlwZXMuanMnXG5cbi8qKlxuICogSW50ZXJuYWwgdXRpbGl0eSBob29rIHRvIGdldCBhbiBhcnJheS12ZXJzaW9uIG9mIHNwZWMuYWNjZXB0LlxuICogVGhlIG1haW4gdXRpbGl0eSBoZXJlIGlzIHRoYXQgd2UgYXJlbid0IGNyZWF0aW5nIGEgbmV3IGFycmF5IG9uIGV2ZXJ5IHJlbmRlciBpZiBhIG5vbi1hcnJheSBzcGVjLmFjY2VwdCBpcyBwYXNzZWQgaW4uXG4gKiBAcGFyYW0gc3BlY1xuICovXG5leHBvcnQgZnVuY3Rpb24gdXNlQWNjZXB0PE8sIFIsIFA+KFxuXHRzcGVjOiBEcm9wVGFyZ2V0SG9va1NwZWM8TywgUiwgUD4sXG4pOiBJZGVudGlmaWVyW10ge1xuXHRjb25zdCB7IGFjY2VwdCB9ID0gc3BlY1xuXHRyZXR1cm4gdXNlTWVtbygoKSA9PiB7XG5cdFx0aW52YXJpYW50KHNwZWMuYWNjZXB0ICE9IG51bGwsICdhY2NlcHQgbXVzdCBiZSBkZWZpbmVkJylcblx0XHRyZXR1cm4gQXJyYXkuaXNBcnJheShhY2NlcHQpID8gYWNjZXB0IDogW2FjY2VwdF1cblx0fSwgW2FjY2VwdF0pXG59XG4iXSwibWFwcGluZ3MiOiI7Ozs7OztBQUFBLElBQUFBLFVBQUEsR0FBQUMsT0FBQTtBQUVBLElBQUFDLE1BQUEsR0FBQUQsT0FBQTtBQUlBOzs7OztBQUtPLFNBQVNFLFNBQVNBLENBQ3hCQyxJQUFpQyxFQUNsQjtFQUNmLE1BQU07SUFBRUM7RUFBTSxDQUFFLEdBQUdELElBQUk7RUFDdkIsT0FBTyxJQUFBRSxjQUFPLEVBQUMsTUFBTTtJQUNwQixJQUFBQyxvQkFBUyxFQUFDSCxJQUFJLENBQUNDLE1BQU0sSUFBSSxJQUFJLEVBQUUsd0JBQXdCLENBQUM7SUFDeEQsT0FBT0csS0FBSyxDQUFDQyxPQUFPLENBQUNKLE1BQU0sQ0FBQyxHQUFHQSxNQUFNLEdBQUcsQ0FBQ0EsTUFBTSxDQUFDO0dBQ2hELEVBQUUsQ0FBQ0EsTUFBTSxDQUFDLENBQUMifQ==

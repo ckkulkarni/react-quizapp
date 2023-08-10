@@ -1,0 +1,7 @@
+215ecabd194f32f3503a930f5d7c4f63
+const chartjs = require('../dist/chart.cjs');
+const {Chart, registerables} = chartjs;
+
+Chart.register(...registerables);
+
+module.exports = Object.assign(Chart, chartjs);

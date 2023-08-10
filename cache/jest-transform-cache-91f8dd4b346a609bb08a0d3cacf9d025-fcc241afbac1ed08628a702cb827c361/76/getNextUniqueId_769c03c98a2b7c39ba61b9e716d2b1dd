@@ -1,0 +1,12 @@
+d342d644057b2f42a8b8506553ce9297
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getNextUniqueId = getNextUniqueId;
+let nextUniqueId = 0;
+function getNextUniqueId() {
+  return nextUniqueId++;
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJuZXh0VW5pcXVlSWQiLCJnZXROZXh0VW5pcXVlSWQiXSwic291cmNlcyI6WyIuLi8uLi9zcmMvdXRpbHMvZ2V0TmV4dFVuaXF1ZUlkLnRzIl0sInNvdXJjZXNDb250ZW50IjpbImxldCBuZXh0VW5pcXVlSWQgPSAwXG5cbmV4cG9ydCBmdW5jdGlvbiBnZXROZXh0VW5pcXVlSWQoKTogbnVtYmVyIHtcblx0cmV0dXJuIG5leHRVbmlxdWVJZCsrXG59XG4iXSwibWFwcGluZ3MiOiI7Ozs7OztBQUFBLElBQUlBLFlBQVksR0FBRyxDQUFDO0FBRWIsU0FBU0MsZUFBZUEsQ0FBQSxFQUFXO0VBQ3pDLE9BQU9ELFlBQVksRUFBRSJ9

@@ -1,0 +1,60 @@
+cfa8e7ae034e07043f4484343fd2aea7
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.DragSourceImpl = void 0;
+class DragSourceImpl {
+  beginDrag() {
+    const spec = this.spec;
+    const monitor = this.monitor;
+    let result = null;
+    if (typeof spec.item === 'object') {
+      result = spec.item;
+    } else if (typeof spec.item === 'function') {
+      result = spec.item(monitor);
+    } else {
+      result = {};
+    }
+    return result !== null && result !== void 0 ? result : null;
+  }
+  canDrag() {
+    const spec = this.spec;
+    const monitor = this.monitor;
+    if (typeof spec.canDrag === 'boolean') {
+      return spec.canDrag;
+    } else if (typeof spec.canDrag === 'function') {
+      return spec.canDrag(monitor);
+    } else {
+      return true;
+    }
+  }
+  isDragging(globalMonitor, target) {
+    const spec = this.spec;
+    const monitor = this.monitor;
+    const {
+      isDragging
+    } = spec;
+    return isDragging ? isDragging(monitor) : target === globalMonitor.getSourceId();
+  }
+  endDrag() {
+    const spec = this.spec;
+    const monitor = this.monitor;
+    const connector = this.connector;
+    const {
+      end
+    } = spec;
+    if (end) {
+      end(monitor.getItem(), monitor);
+    }
+    connector.reconnect();
+  }
+  constructor(spec, monitor, connector) {
+    this.spec = spec;
+    this.monitor = monitor;
+    this.connector = connector;
+  }
+}
+exports.DragSourceImpl = DragSourceImpl;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJEcmFnU291cmNlSW1wbCIsImJlZ2luRHJhZyIsInNwZWMiLCJtb25pdG9yIiwicmVzdWx0IiwiaXRlbSIsImNhbkRyYWciLCJpc0RyYWdnaW5nIiwiZ2xvYmFsTW9uaXRvciIsInRhcmdldCIsImdldFNvdXJjZUlkIiwiZW5kRHJhZyIsImNvbm5lY3RvciIsImVuZCIsImdldEl0ZW0iLCJyZWNvbm5lY3QiLCJjb25zdHJ1Y3RvciIsImV4cG9ydHMiXSwic291cmNlcyI6WyIuLi8uLi8uLi9zcmMvaG9va3MvdXNlRHJhZy9EcmFnU291cmNlSW1wbC50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgdHlwZSB7IERyYWdEcm9wTW9uaXRvciwgRHJhZ1NvdXJjZSwgSWRlbnRpZmllciB9IGZyb20gJ2RuZC1jb3JlJ1xuXG5pbXBvcnQgdHlwZSB7IENvbm5lY3RvciB9IGZyb20gJy4uLy4uL2ludGVybmFscy9pbmRleC5qcydcbmltcG9ydCB0eXBlIHsgRHJhZ1NvdXJjZU1vbml0b3IgfSBmcm9tICcuLi8uLi90eXBlcy9pbmRleC5qcydcbmltcG9ydCB0eXBlIHsgRHJhZ09iamVjdEZhY3RvcnksIERyYWdTb3VyY2VIb29rU3BlYyB9IGZyb20gJy4uL3R5cGVzLmpzJ1xuXG5leHBvcnQgY2xhc3MgRHJhZ1NvdXJjZUltcGw8TywgUiwgUD4gaW1wbGVtZW50cyBEcmFnU291cmNlIHtcblx0cHVibGljIGNvbnN0cnVjdG9yKFxuXHRcdHB1YmxpYyBzcGVjOiBEcmFnU291cmNlSG9va1NwZWM8TywgUiwgUD4sXG5cdFx0cHJpdmF0ZSBtb25pdG9yOiBEcmFnU291cmNlTW9uaXRvcjxPLCBSPixcblx0XHRwcml2YXRlIGNvbm5lY3RvcjogQ29ubmVjdG9yLFxuXHQpIHt9XG5cblx0cHVibGljIGJlZ2luRHJhZygpIHtcblx0XHRjb25zdCBzcGVjID0gdGhpcy5zcGVjXG5cdFx0Y29uc3QgbW9uaXRvciA9IHRoaXMubW9uaXRvclxuXG5cdFx0bGV0IHJlc3VsdDogTyB8IG51bGwgPSBudWxsXG5cdFx0aWYgKHR5cGVvZiBzcGVjLml0ZW0gPT09ICdvYmplY3QnKSB7XG5cdFx0XHRyZXN1bHQgPSBzcGVjLml0ZW0gYXMgT1xuXHRcdH0gZWxzZSBpZiAodHlwZW9mIHNwZWMuaXRlbSA9PT0gJ2Z1bmN0aW9uJykge1xuXHRcdFx0cmVzdWx0ID0gKHNwZWMuaXRlbSBhcyBEcmFnT2JqZWN0RmFjdG9yeTxPPikobW9uaXRvcilcblx0XHR9IGVsc2Uge1xuXHRcdFx0cmVzdWx0ID0ge30gYXMgT1xuXHRcdH1cblx0XHRyZXR1cm4gcmVzdWx0ID8/IG51bGxcblx0fVxuXG5cdHB1YmxpYyBjYW5EcmFnKCkge1xuXHRcdGNvbnN0IHNwZWMgPSB0aGlzLnNwZWNcblx0XHRjb25zdCBtb25pdG9yID0gdGhpcy5tb25pdG9yXG5cdFx0aWYgKHR5cGVvZiBzcGVjLmNhbkRyYWcgPT09ICdib29sZWFuJykge1xuXHRcdFx0cmV0dXJuIHNwZWMuY2FuRHJhZ1xuXHRcdH0gZWxzZSBpZiAodHlwZW9mIHNwZWMuY2FuRHJhZyA9PT0gJ2Z1bmN0aW9uJykge1xuXHRcdFx0cmV0dXJuIHNwZWMuY2FuRHJhZyhtb25pdG9yKVxuXHRcdH0gZWxzZSB7XG5cdFx0XHRyZXR1cm4gdHJ1ZVxuXHRcdH1cblx0fVxuXG5cdHB1YmxpYyBpc0RyYWdnaW5nKGdsb2JhbE1vbml0b3I6IERyYWdEcm9wTW9uaXRvciwgdGFyZ2V0OiBJZGVudGlmaWVyKSB7XG5cdFx0Y29uc3Qgc3BlYyA9IHRoaXMuc3BlY1xuXHRcdGNvbnN0IG1vbml0b3IgPSB0aGlzLm1vbml0b3Jcblx0XHRjb25zdCB7IGlzRHJhZ2dpbmcgfSA9IHNwZWNcblx0XHRyZXR1cm4gaXNEcmFnZ2luZ1xuXHRcdFx0PyBpc0RyYWdnaW5nKG1vbml0b3IpXG5cdFx0XHQ6IHRhcmdldCA9PT0gZ2xvYmFsTW9uaXRvci5nZXRTb3VyY2VJZCgpXG5cdH1cblxuXHRwdWJsaWMgZW5kRHJhZygpIHtcblx0XHRjb25zdCBzcGVjID0gdGhpcy5zcGVjXG5cdFx0Y29uc3QgbW9uaXRvciA9IHRoaXMubW9uaXRvclxuXHRcdGNvbnN0IGNvbm5lY3RvciA9IHRoaXMuY29ubmVjdG9yXG5cdFx0Y29uc3QgeyBlbmQgfSA9IHNwZWNcblx0XHRpZiAoZW5kKSB7XG5cdFx0XHRlbmQobW9uaXRvci5nZXRJdGVtKCksIG1vbml0b3IpXG5cdFx0fVxuXHRcdGNvbm5lY3Rvci5yZWNvbm5lY3QoKVxuXHR9XG59XG4iXSwibWFwcGluZ3MiOiI7Ozs7OztBQU1PLE1BQU1BLGNBQWM7RUFPMUJDLFNBQWdCQSxDQUFBLEVBQUc7SUFDbEIsTUFBTUMsSUFBSSxHQUFHLElBQUksQ0FBQ0EsSUFBSTtJQUN0QixNQUFNQyxPQUFPLEdBQUcsSUFBSSxDQUFDQSxPQUFPO0lBRTVCLElBQUlDLE1BQU0sR0FBYSxJQUFJO0lBQzNCLElBQUksT0FBT0YsSUFBSSxDQUFDRyxJQUFJLEtBQUssUUFBUSxFQUFFO01BQ2xDRCxNQUFNLEdBQUdGLElBQUksQ0FBQ0csSUFBSTtLQUNsQixNQUFNLElBQUksT0FBT0gsSUFBSSxDQUFDRyxJQUFJLEtBQUssVUFBVSxFQUFFO01BQzNDRCxNQUFNLEdBQUdGLElBQUssQ0FBQ0csSUFBSSxDQUEwQkYsT0FBTyxDQUFDO0tBQ3JELE1BQU07TUFDTkMsTUFBTSxHQUFHLEVBQUU7O0lBRVosT0FBT0EsTUFBTSxhQUFOQSxNQUFNLGNBQU5BLE1BQU0sR0FBSSxJQUFJOztFQUd0QkUsT0FBY0EsQ0FBQSxFQUFHO0lBQ2hCLE1BQU1KLElBQUksR0FBRyxJQUFJLENBQUNBLElBQUk7SUFDdEIsTUFBTUMsT0FBTyxHQUFHLElBQUksQ0FBQ0EsT0FBTztJQUM1QixJQUFJLE9BQU9ELElBQUksQ0FBQ0ksT0FBTyxLQUFLLFNBQVMsRUFBRTtNQUN0QyxPQUFPSixJQUFJLENBQUNJLE9BQU87S0FDbkIsTUFBTSxJQUFJLE9BQU9KLElBQUksQ0FBQ0ksT0FBTyxLQUFLLFVBQVUsRUFBRTtNQUM5QyxPQUFPSixJQUFJLENBQUNJLE9BQU8sQ0FBQ0gsT0FBTyxDQUFDO0tBQzVCLE1BQU07TUFDTixPQUFPLElBQUk7OztFQUliSSxVQUFpQkEsQ0FBQ0MsYUFBOEIsRUFBRUMsTUFBa0IsRUFBRTtJQUNyRSxNQUFNUCxJQUFJLEdBQUcsSUFBSSxDQUFDQSxJQUFJO0lBQ3RCLE1BQU1DLE9BQU8sR0FBRyxJQUFJLENBQUNBLE9BQU87SUFDNUIsTUFBTTtNQUFFSTtJQUFVLENBQUUsR0FBR0wsSUFBSTtJQUMzQixPQUFPSyxVQUFVLEdBQ2RBLFVBQVUsQ0FBQ0osT0FBTyxDQUFDLEdBQ25CTSxNQUFNLEtBQUtELGFBQWEsQ0FBQ0UsV0FBVyxFQUFFOztFQUcxQ0MsT0FBY0EsQ0FBQSxFQUFHO0lBQ2hCLE1BQU1ULElBQUksR0FBRyxJQUFJLENBQUNBLElBQUk7SUFDdEIsTUFBTUMsT0FBTyxHQUFHLElBQUksQ0FBQ0EsT0FBTztJQUM1QixNQUFNUyxTQUFTLEdBQUcsSUFBSSxDQUFDQSxTQUFTO0lBQ2hDLE1BQU07TUFBRUM7SUFBRyxDQUFFLEdBQUdYLElBQUk7SUFDcEIsSUFBSVcsR0FBRyxFQUFFO01BQ1JBLEdBQUcsQ0FBQ1YsT0FBTyxDQUFDVyxPQUFPLEVBQUUsRUFBRVgsT0FBTyxDQUFDOztJQUVoQ1MsU0FBUyxDQUFDRyxTQUFTLEVBQUU7O0VBbER0QkMsWUFDUWQsSUFBaUMsRUFDaENDLE9BQWdDLEVBQ2hDUyxTQUFvQixFQUMzQjtTQUhNVixJQUFpQyxHQUFqQ0EsSUFBaUM7U0FDaENDLE9BQWdDLEdBQWhDQSxPQUFnQztTQUNoQ1MsU0FBb0IsR0FBcEJBLFNBQW9COzs7QUFpRDdCSyxPQUFBLENBQUFqQixjQUFBLEdBQUFBLGNBQUEifQ==

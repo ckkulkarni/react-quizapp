@@ -1,0 +1,11 @@
+f8613beb19488db7671bb0f6da8b6b80
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.reduce = reduce;
+function reduce(state = 0) {
+  return state + 1;
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJyZWR1Y2UiLCJzdGF0ZSJdLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9yZWR1Y2Vycy9zdGF0ZUlkLnRzIl0sInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCB0eXBlIFN0YXRlID0gbnVtYmVyXG5cbmV4cG9ydCBmdW5jdGlvbiByZWR1Y2Uoc3RhdGU6IFN0YXRlID0gMCk6IFN0YXRlIHtcblx0cmV0dXJuIHN0YXRlICsgMVxufVxuIl0sIm1hcHBpbmdzIjoiOzs7Ozs7QUFFTyxTQUFTQSxNQUFNQSxDQUFDQyxLQUFZLEdBQUcsQ0FBQyxFQUFTO0VBQy9DLE9BQU9BLEtBQUssR0FBRyxDQUFDIn0=

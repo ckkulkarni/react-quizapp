@@ -1,0 +1,32 @@
+ee045d1b351ce34188024246adb91b56
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.specialCharMap = void 0;
+
+/**
+ * @deprecated This list of strings with special meaning is no longer necessary
+ * as we've introduced a standardized way to describe any keystroke for `userEvent`.
+ * @see https://testing-library.com/docs/ecosystem-user-event#keyboardtext-options
+ */
+const specialCharMap = {
+  arrowLeft: '{arrowleft}',
+  arrowRight: '{arrowright}',
+  arrowDown: '{arrowdown}',
+  arrowUp: '{arrowup}',
+  enter: '{enter}',
+  escape: '{esc}',
+  delete: '{del}',
+  backspace: '{backspace}',
+  home: '{home}',
+  end: '{end}',
+  selectAll: '{selectall}',
+  space: '{space}',
+  whitespace: ' ',
+  pageUp: '{pageUp}',
+  pageDown: '{pageDown}'
+};
+exports.specialCharMap = specialCharMap;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJPYmplY3QiLCJkZWZpbmVQcm9wZXJ0eSIsImV4cG9ydHMiLCJ2YWx1ZSIsInNwZWNpYWxDaGFyTWFwIiwiYXJyb3dMZWZ0IiwiYXJyb3dSaWdodCIsImFycm93RG93biIsImFycm93VXAiLCJlbnRlciIsImVzY2FwZSIsImRlbGV0ZSIsImJhY2tzcGFjZSIsImhvbWUiLCJlbmQiLCJzZWxlY3RBbGwiLCJzcGFjZSIsIndoaXRlc3BhY2UiLCJwYWdlVXAiLCJwYWdlRG93biJdLCJzb3VyY2VzIjpbInNwZWNpYWxDaGFyTWFwLmpzIl0sInNvdXJjZXNDb250ZW50IjpbIlwidXNlIHN0cmljdFwiO1xuXG5PYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywgXCJfX2VzTW9kdWxlXCIsIHtcbiAgdmFsdWU6IHRydWVcbn0pO1xuZXhwb3J0cy5zcGVjaWFsQ2hhck1hcCA9IHZvaWQgMDtcblxuLyoqXG4gKiBAZGVwcmVjYXRlZCBUaGlzIGxpc3Qgb2Ygc3RyaW5ncyB3aXRoIHNwZWNpYWwgbWVhbmluZyBpcyBubyBsb25nZXIgbmVjZXNzYXJ5XG4gKiBhcyB3ZSd2ZSBpbnRyb2R1Y2VkIGEgc3RhbmRhcmRpemVkIHdheSB0byBkZXNjcmliZSBhbnkga2V5c3Ryb2tlIGZvciBgdXNlckV2ZW50YC5cbiAqIEBzZWUgaHR0cHM6Ly90ZXN0aW5nLWxpYnJhcnkuY29tL2RvY3MvZWNvc3lzdGVtLXVzZXItZXZlbnQja2V5Ym9hcmR0ZXh0LW9wdGlvbnNcbiAqL1xuY29uc3Qgc3BlY2lhbENoYXJNYXAgPSB7XG4gIGFycm93TGVmdDogJ3thcnJvd2xlZnR9JyxcbiAgYXJyb3dSaWdodDogJ3thcnJvd3JpZ2h0fScsXG4gIGFycm93RG93bjogJ3thcnJvd2Rvd259JyxcbiAgYXJyb3dVcDogJ3thcnJvd3VwfScsXG4gIGVudGVyOiAne2VudGVyfScsXG4gIGVzY2FwZTogJ3tlc2N9JyxcbiAgZGVsZXRlOiAne2RlbH0nLFxuICBiYWNrc3BhY2U6ICd7YmFja3NwYWNlfScsXG4gIGhvbWU6ICd7aG9tZX0nLFxuICBlbmQ6ICd7ZW5kfScsXG4gIHNlbGVjdEFsbDogJ3tzZWxlY3RhbGx9JyxcbiAgc3BhY2U6ICd7c3BhY2V9JyxcbiAgd2hpdGVzcGFjZTogJyAnLFxuICBwYWdlVXA6ICd7cGFnZVVwfScsXG4gIHBhZ2VEb3duOiAne3BhZ2VEb3dufSdcbn07XG5leHBvcnRzLnNwZWNpYWxDaGFyTWFwID0gc3BlY2lhbENoYXJNYXA7Il0sIm1hcHBpbmdzIjoiQUFBQSxZQUFZOztBQUVaQSxNQUFNLENBQUNDLGNBQWMsQ0FBQ0MsT0FBTyxFQUFFLFlBQVksRUFBRTtFQUMzQ0MsS0FBSyxFQUFFO0FBQ1QsQ0FBQyxDQUFDO0FBQ0ZELE9BQU8sQ0FBQ0UsY0FBYyxHQUFHLEtBQUssQ0FBQzs7QUFFL0I7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBLE1BQU1BLGNBQWMsR0FBRztFQUNyQkMsU0FBUyxFQUFFLGFBQWE7RUFDeEJDLFVBQVUsRUFBRSxjQUFjO0VBQzFCQyxTQUFTLEVBQUUsYUFBYTtFQUN4QkMsT0FBTyxFQUFFLFdBQVc7RUFDcEJDLEtBQUssRUFBRSxTQUFTO0VBQ2hCQyxNQUFNLEVBQUUsT0FBTztFQUNmQyxNQUFNLEVBQUUsT0FBTztFQUNmQyxTQUFTLEVBQUUsYUFBYTtFQUN4QkMsSUFBSSxFQUFFLFFBQVE7RUFDZEMsR0FBRyxFQUFFLE9BQU87RUFDWkMsU0FBUyxFQUFFLGFBQWE7RUFDeEJDLEtBQUssRUFBRSxTQUFTO0VBQ2hCQyxVQUFVLEVBQUUsR0FBRztFQUNmQyxNQUFNLEVBQUUsVUFBVTtFQUNsQkMsUUFBUSxFQUFFO0FBQ1osQ0FBQztBQUNEakIsT0FBTyxDQUFDRSxjQUFjLEdBQUdBLGNBQWMifQ==

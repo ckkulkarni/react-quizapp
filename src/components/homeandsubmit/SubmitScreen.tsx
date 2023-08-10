@@ -5,10 +5,6 @@ import { useNavigate } from "react-router";
 import { Pie } from "react-chartjs-2";
 import "chart.js/auto";
 const SubmitScreen = () => {
-  jest.mock("react-chartjs-2", () => ({
-    Pie: () => <div data-testid="submitscreen-piechart" />,
-  }));
-
   const navigation = useNavigate();
   const { score, setScore, selectedLanguage, email, name, phoneNumber, age } =
     useContext(QuizContext);
